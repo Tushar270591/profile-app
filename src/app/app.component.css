@@ -1,0 +1,17 @@
+.langTabContainer>ul {
+    list-style: none;
+    display: flex;
+    padding: unset;
+}
+
+.langTabContainer>ul li {
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.langTabContainer>ul li:hover,
+.langTabContainer>ul li.selected {
+    color: white;
+    background: black;
+}

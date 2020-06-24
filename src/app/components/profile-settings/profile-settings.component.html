@@ -1,0 +1,19 @@
+<div>
+    <h1>​{{'title_text' | translate}}​</h1>
+    <div>
+        <p>​Username: {{user?.username}}​</p>
+        <p>Email: {{user?.email}}​</p>
+    </div>
+    <div>
+        <label>​First Name:​</label>
+        <input type="text" [disabled]="!user" [ngModel]="user?.firstName" (ngModelChange)="user.firstName = $event; isProfileSaved = true; emailGenerationError = ''" /><br>
+        <label>Last Name:​</label>
+        <input type="text" [disabled]="!user" [ngModel]="user?.lastName" (ngModelChange)="user.lastName = $event; isProfileSaved = true; emailGenerationError = ''" /><br>
+        <input type="button" value="Save" (click)="emailGenerationError = '';saveProfile()">
+    </div>
+    <p [hidden]="user">​Loading profile...​</p>
+    <p [hidden]="!isSavingProfile">​Saving profile...​</p>
+    <p [hidden]="isProfileSaved">​Error!{{saveProfileError}}​</p>
+    <p [hidden]="!emailGenerationError">​Error!{{emailGenerationError}}​</p>
+
+</div>
